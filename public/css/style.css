@@ -1,0 +1,179 @@
+/*Nombre pagina web:Instagramfake by eliesib */
+.name-web {
+
+    font: oblique bold 120% cursive;
+    font-size: 18px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*Mensajes presentados */
+
+.status {
+    color: green;
+}
+
+/* Icono mensajeria */
+
+.ico-menu{
+    height: 24px;
+    width: 24px;
+    
+}
+
+/*Avatar del perfil del usuario*/
+.avatar {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+    vertical-align: text-top;
+
+}
+.avatar-perfil{
+    float: left;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 100px;
+    vertical-align: text-top;
+
+}
+
+.avatar:hover {
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Diseño del contenido en dashboard */
+.flex-container {
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    width: 470px;
+    margin: auto;
+    border-radius: 3%;
+    font-size: smaller;
+
+}
+
+
+/* Session que contiene el nombre y el avatar del usuario debajo de las imagenes */
+.section-user {
+
+    padding: 10px 0;
+    background-color: white;
+    border: rgba(0, 0, 0, 0.19);
+    border-bottom-width: thick;
+    border-left-width: thin;
+    border-radius: 3%;
+
+}
+
+/*Estilo para el texto que contiene los nombre de usuarios */
+a.user-name {
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: normal;
+}
+
+/*Imagenes */
+
+.image-container {
+
+    width: 470px;
+    height: 500px;
+    margin-bottom: 10px;
+}
+
+@supports(object-fit: cover) {
+    .image-container {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.perfil-imagenes{
+    float: left;
+    width: 220px;
+    height: 230px;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-bottom: 28px;
+   
+}
+/* Estilo del boton de like */
+.likes img{
+
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+
+}
+
+p.black{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+/*Contenido: descripcion, ver comentarios, fecha y agregar comentario */
+
+.content {
+    margin-left: 10px;
+   
+}
+.content p{
+    
+    position: relative;
+    color: #2349f5;
+    
+   
+}
+
+/*Estilo en: Ver los comentarios */
+
+a.see {
+    color: gray;
+}
+
+/*Caja para agregar comentario*/
+#addcomment {
+    width: 25em;
+    border-color: rgb(191, 191, 207);
+    margin-bottom: 0.5cm;
+}
+
+button.comments {
+    color: #0095F6;
+}
+
+.fecha a {
+    color: grey;
+    font-size: smaller;
+}
+
+#delete{
+    background-color: rgb(236, 236, 236);
+    border-radius: 10%;
+    margin-top: 15px;
+    color: red;
+    float: right;
+}
+
+.pagination {
+    background-color: bisque;
+    width: 470px;
+    margin: auto;
+}
