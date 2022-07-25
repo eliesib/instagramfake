@@ -7,7 +7,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="flex-auto flex-col w-2/3 m-auto bg-white">
+        <div class="flex-auto flex-col w-[975px] m-auto bg-white">
             <div class="flex flex-row justify-items-center pb-10">
                 <div class="w-1/4">
                     <img class="avatar-perfil" src="{{ url('perfil/avatar/' . $user->image) }}">
@@ -55,11 +55,12 @@
 
 
                 </div>
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-3 gap-x-4 gap-y-8">
                     @foreach ($user->images as $images)
-                        
-                            <img src="{{ route('image.mostrar', ['filename' => $images->image_path]) }}">
-                        
+                        <div class="w-[293px] h-[293px]">
+
+                            <img class="object-cover h-full w-full" src="{{ route('image.mostrar', ['filename' => $images->image_path]) }}">
+                        </div>
                     @endforeach
 
 

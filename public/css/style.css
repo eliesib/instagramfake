@@ -4,10 +4,6 @@
     font: oblique bold 120% cursive;
     font-size: 18px;
 }
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
 
 /*Mensajes presentados */
 
@@ -66,22 +62,6 @@ a.user-name {
    
 }
 
-/*Imagenes */
-
-.image-container {
-
-    width: 468px;
-    height: 500px;
-    margin-bottom: 10px;
-}
-
-@supports(object-fit: cover) {
-    .image-container {
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-    }
-}
 
 /* Estilo del boton de like */
 .likes img{
@@ -146,4 +126,10 @@ button.comments {
     background-color: bisque;
     width: 470px;
     margin: auto;
+}
+
+img {
+    object-fit: cover;
+    max-width: 300%;
+    max-height: 300%;
 }

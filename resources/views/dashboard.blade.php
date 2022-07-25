@@ -34,8 +34,8 @@
                 </div>
 
 
-                <div class="image-container">
-                    <img src="{{ route('image.mostrar', ['filename' => $i->image_path]) }}">
+                <div class="mb-2.5">
+                    <img class="object-cover h-full w-full" src="{{ route('image.mostrar', ['filename' => $i->image_path]) }}">
                 </div>
 
                 <div class="likes">
