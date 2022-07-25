@@ -7,16 +7,16 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="flex-auto flex-col w-[975px] m-auto bg-white">
-            <div class="flex flex-row justify-items-center pb-10">
-                <div class="w-1/4">
+        <div class="flex-auto flex-col w-[935px] m-auto ">
+            <div class="flex flex-row pb-10 h-[230px] ">
+                <div class="w-1/3">
                     <img class="avatar-perfil" src="{{ url('perfil/avatar/' . $user->image) }}">
                 </div>
-                <div class="w-3/4 grid grid-rows-4 grid-flow-col">
-                    <div class="">
+                <div class="w-2/3 grid grid-rows-3 grid-flow-col ml-4 ">
+                    <div class="h-auto">
                         <p class="text-2xl"> {{ $user->usuario }}
                             @if (Auth::user()->id == $user->id)
-                                <x-button class="ml-4">
+                                <x-button class="ml-4 ">
                                     <a href="{{ route('configuracion') }}">Editar perfil</a>
                                 </x-button>
                             @else
@@ -26,14 +26,13 @@
                             @endif
                         </p>
                     </div>
-                    <div>
+                   
+                    <div class="h-96">
                         <a>{{ count($user->images) }} publicaciones</a>
                     </div>
-                    <div>
-                        <p class="black"> {{ $user->name . ' ' . $user->surname }}</p>
-                    </div>
-                    <div>
-                        <p>descripcion</p>
+                    <div class="h-auto">
+                        <p class="font-bold">{{$user->name . ' ' . $user->surname }}</p>
+                        <p>Centro de diseño, desarrollo, comercialización y asistencia técnica de recursos educativos para la enseñanza y aprendizaje inclusivo.</p>
                     </div>
                 </div>
             </div>
