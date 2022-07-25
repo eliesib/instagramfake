@@ -65,4 +65,27 @@ class ImageController extends Controller
         ]);
     }
 
+    public function delete($id){
+
+    
+               //El usuario en sesion
+               $user= Auth::user();
+
+               //Buscamos el comentario asociado a la imagen}
+               $image = Image::find($id);
+       
+               //Comprobar si el comentario pertenece al usuario en sesion
+       
+               if($user && ($image->user_id == $user->id)){
+                   $image->delete();
+                   return redirect()->route('dashboard')->with('status','Se ha eliminado exitosamente la imagen');
+       
+               }
+               else{
+                
+                   return redirect()->route('dashboard')->with('status','No se ha podido eliminar la imagen');
+               }
+       
+    }
+
 }

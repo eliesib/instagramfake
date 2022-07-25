@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="flex-container">
+        <div class="flex-auto flex-col justify-center w-[800px] m-auto rounded-lg shadow-2xl bg-white">
             <div class="section-user">
                 <div>
                     <img class="avatar" src="{{ url('perfil/avatar/' . $i->users->image) }} ">

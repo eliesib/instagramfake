@@ -40,6 +40,7 @@ class PerfilController extends Controller
             'name' => ['bail','required','string'],
             'surname' => ['string'],
             'usuario' => ['required','unique:users,usuario, '.$id],
+            'image_path' => ['image']
         ]);
        
 

@@ -13,17 +13,26 @@
 
 
         @foreach ($images as $i)
-            <div class="flex-container">
-
-                <div class="section-user">
-                    <div>
+            <div class="flex-auto flex-col justify-center w-[470px] m-auto rounded-lg shadow-2xl bg-white">
+                <div class="flex flex-row items-center py-1">
+                    <div class="basis-1/6">
+                        <img class="avatar" src="{{ url('perfil/avatar/' . $i->users->image) }} ">
+                    </div>
+                    <div class="basis-4/5 justify-self-end">
                         <a class="user-name" href="{{ route('perfil', ['usuario' => $i->users->usuario]) }}">
-                            <img class="avatar" src="{{ url('perfil/avatar/' . $i->users->image) }} ">
+
                             {{ $i->users->usuario }}
                         </a>
                     </div>
-
+                    <div class="basis-1/2">
+                        @if (Auth::user()->id == $i->users->id)
+                            <!-- Continuas por aqui, falta poder eliminar comentarios-->
+                            <button onclick="location.href = '{{ route('img.delete', ['id' => $i->id]) }}';"
+                                id="delete"> Eliminar</button>
+                        @endif
+                    </div>
                 </div>
+
 
                 <div class="image-container">
                     <img src="{{ route('image.mostrar', ['filename' => $i->image_path]) }}">
@@ -49,7 +58,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <a class="user-name"> {{ $i->users->usuario . ': ' }} </a>
+                        <a class="user-name"> {{ $i->users->usuario}} </a>
                         {{ $i->description }}
                     </div>
                     <div>
@@ -61,16 +70,17 @@
                     <div class="fecha">
                         <a>Hace {{ \FormatTime::LongTimeFilter($i->updated_at) }} </a>
                     </div>
-                    <div>
-                        <form action="{{ route('comment.save') }}" method="get">
-                            <input type="hidden" name="image_id" value="{{ $i->id }}" />
-                            <x-input id="addcomment" class="" type="text" name="comentario"
-                                placeholder="Añade un comentario" />
-
-                            <button class="comments">Publicar</button>
-                        </form>
-                    </div>
                 </div>
+                <div>
+                    <form action="{{ route('comment.save') }}" method="get">
+                        <input type="hidden" name="image_id" value="{{ $i->id }}" />
+                        <x-input id="addcomment" class="" type="text" name="comentario"
+                            placeholder="Añade un comentario" />
+
+                        <button class="comments">Publicar</button>
+                    </form>
+                </div>
+
 
             </div> <br>
         @endforeach

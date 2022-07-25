@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 require __DIR__ . '/auth.php';
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
 //inicio
 Route::get('/dashboard', [InicioController::class, 'inicio'])->name('dashboard');
@@ -39,7 +39,9 @@ Route::group(['prefix' => 'image'], function () {
     Route::GET('/upload', [ImageController::class, 'upload'])->name('upload');
     Route::POST('/save', [ImageController::class, 'save'])->name('image.save');
     Route::get('/mostrar/{filename}', [ImageController::class, 'getImage'])->name('image.mostrar');
-    Route::get('{user}/{id}', [ImageController::class, 'detalles'])->name('img-detalles');
+    Route::get('/delete/{id}', [ImageController::class, 'delete'])->name('img.delete');
+    Route::get('/{user}/{id}', [ImageController::class, 'detalles'])->name('img-detalles');
+   
 });
 
 /* Comentarios */
