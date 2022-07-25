@@ -1,28 +1,28 @@
-# instagramfake con Laravel Sail
+# instagramfake con Laravel 
  Este es un proyecto hecho en Laravel 9.x en el cual simula a la popular red social de Instagram
 ## Previa
-## Requisitos
-- Docker
 
-## Instalación
-1. Primero clonamos este repositorio: 
-``$ git clone https://github.com/eliesib/instagramfake/`` 
+## Instalación usando Sail 
+- Requisitos: Docker
+
+1. Primero clonamos este repositorio: ``$ git clone https://github.com/eliesib/instagramfake/`` 
 2. Ingresamos a la carpeta: ``$ cd instagramfake``
-3. Ejecutamos: ``cp .env.example .env`` y configuramos nuestra base de datos
-4. Ejecutamos key: ``$ php artisan key:generate``
-5. Agregamos el bash de Laravel Sail:
+3. Ejecutamos: ``cp .env.example .env``
+4. Instalamos sail: php artisan sail:install y elegimos el servicio de preferencia
+-(Opcional) Al instalar sail puedes abril .env con un editor y configurar tu base de datos a conveniencia 
+-Si escoges un HOST diferente a mysql es obligatorio editarlo en .env y cambiar el HOST al que hayas escogido)
+6. Ejecutamos key: ``$ php artisan key:generate``
+7. Iniciamos sail:
+    
+    ``$ .vendor/bin/sail up``
+8. Instalamos e iniciamos npm: ``$ ./vendor/bin/sail npm install && ./vendor/bin/sail npm run dev``
+9. Haremos la migracion de la base de datos con: 
 
-    ``alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'``
+    ``$ ./vendor/bin/sail artisan migrate``
     
-    Iniciamos sail:
+    Y luego agregaremos unos datos a la base de datos por default tales como: usuarios, algunas imagenes y comentarios
     
-    ``$ sail up``
-6. Instalamos e iniciamos npm: ``$ sail npm install && npm run dev``
-8. Haremos la migracion de la base de datos con: 
-
-    ``$ sail artisan migrate:fresh --seed``
-    
-    *(EL comando --seed lo asigno para agregar a la base de datos algunos datos por default tales como: usuarios, algunas imagenes y comentarios)*
+     ``$ ./vendor/bin/sail artisan db:seed``
     
 Listo, ya deberias ingresar a la direccion que te fue dada al ejecutar el ``sail up``
 
