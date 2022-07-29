@@ -63,7 +63,7 @@
                     </div>
                     <div>
                         <a class="see"
-                            href="{{ route('img-detalles', ['user' => $i->users->name, 'id' => $i->id]) }}">
+                            href="{{ route('img-detalles', ['user' => $i->users->usuario, 'id' => $i->id]) }}">
                             ver los
                             {{ count($i->comments) }} comentarios</a>
                     </div>

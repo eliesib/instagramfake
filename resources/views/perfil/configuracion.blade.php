@@ -40,6 +40,12 @@
 
                 <x-input id="usuario" class="block mt-1 w-full" type="text" name="usuario" :value="auth::User()->usuario" required autofocus />
             </div>
+            <!-- Descripcion -->
+            <div>
+                <x-label for="description" :value="__('Descripción')" />
+
+                <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="auth::User()->description" required autofocus />
+            </div>
 
             <div>
                 <x-label :value="__('Imagen de perfil: ')" />

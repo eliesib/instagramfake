@@ -24,11 +24,10 @@
     float: left;
     width: 32px;
     height: 32px;
-    border-radius: 100%;
+    border-radius: 9999px;
     margin-left: 8px;
     margin-right: 8px;
     
-
 }
 .avatar-perfil{
     
@@ -43,17 +42,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Session que contiene el nombre y el avatar del usuario debajo de las imagenes */
-.section-user {
 
-    padding: 10px 0;
-    background-color: white;
-    border: rgba(0, 0, 0, 0.19);
-    border-bottom-width: thick;
-    border-left-width: thin;
-    border-radius: 3%;
-
-}
 
 /*Estilo para el texto que contiene los nombre de usuarios */
 a.user-name {
@@ -82,10 +71,7 @@ p.black{
 
 /*Contenido: descripcion, ver comentarios, fecha y agregar comentario */
 
-.content {
-    margin-left: 10px;
-   
-}
+
 .content p{
     
     position: relative;
@@ -102,7 +88,7 @@ a.see {
 
 /*Caja para agregar comentario*/
 #addcomment {
-    width: 25em;
+    width: 85%;
     border-color: rgb(191, 191, 207);
     margin-bottom: 0.5cm;
 }
@@ -111,10 +97,6 @@ button.comments {
     color: #0095F6;
 }
 
-.fecha a {
-    color: grey;
-    font-size: smaller;
-}
 
 #delete{
     background-color: rgb(236, 236, 236);

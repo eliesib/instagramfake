@@ -40,6 +40,7 @@ class PerfilController extends Controller
             'name' => ['bail','required','string'],
             'surname' => ['string'],
             'usuario' => ['required','unique:users,usuario, '.$id],
+            'description' => ['string'],
             'image_path' => ['image']
         ]);
        
@@ -48,6 +49,7 @@ class PerfilController extends Controller
         $name = $request->input('name');
         $surname = $request->input('surname');
         $usuario= $request->input('usuario');
+        $description =$request->input('description');
        
 
         //buscando el registro del usuario en la bade de datos
@@ -57,6 +59,7 @@ class PerfilController extends Controller
         $user->name = $name;
         $user->surname = $surname;
         $user->usuario = $usuario;
+        $user->description = $description;
 
         //actualizacion de imagen del usuario
         $image_path = $request->file("image_path");

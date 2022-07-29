@@ -10,7 +10,8 @@ window.addEventListener("load", function () {
 
             console.log('.btn-like');
             $(this).addClass('btn-dislike').removeClass('btn-like');
-            $(this).attr('src','img/like-clic.png');
+            $(this).attr('src',url+'/img/like-clic.png');
+            $('#numlikes').text($(this).data('likes')+' Me gustas');
 
             $.ajax({
                 url: url+'/like/'+$(this).data('id'),
@@ -32,7 +33,8 @@ window.addEventListener("load", function () {
 
             console.log('.btn-dislike');
             $(this).addClass('btn-like').removeClass('btn-dislike');
-            $(this).attr('src','img/like.png');
+            $(this).attr('src',url+'/img/like.png');
+            $('#numlikes').text($(this).data('likes')+' Me gustas');
 
 
             $.ajax({

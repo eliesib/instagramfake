@@ -20,7 +20,7 @@ class ImageFactory extends Factory
         return [
 
             'user_id' => User::factory()->create(),
-            'description' => fake()->lastName(),
+            'description' => fake()->text(),
             'image_path' => fake()->numberBetween($min = 1, $max = 9).'.jpg', 
 
 
