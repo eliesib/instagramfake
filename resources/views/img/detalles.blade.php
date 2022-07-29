@@ -52,7 +52,7 @@
                         </div>
                         <div class="w-4/6">
                             <p>
-                                <a class="user-name"> {{ $comment->users->name }} </a>
+                                <a class="user-name"> {{ $comment->users->usuario }} </a>
                                 {{ $comment->content }}
                             </p>
                             <p class="text-gray-600 text-xs pb-3">

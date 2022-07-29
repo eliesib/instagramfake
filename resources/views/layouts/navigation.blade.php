@@ -14,8 +14,7 @@
                 <div class="hidden space-x-8 sm:ml-10 sm:flex">
                     <x-nav-link>
                         <form action="" method="get">
-                            <x-input class="" type="text" name="search"
-                                placeholder="Buscar" />
+                            <x-input class="" type="text" name="search" placeholder="Buscar" />
                         </form>
                     </x-nav-link>
 
@@ -32,10 +31,28 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <img class="ico-menu" src="{{ asset('img/menu/explorar.png') }}" />
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        <img class="ico-menu" src="{{ asset('img/menu/notificacion.png') }}" />
-                    </x-nav-link>
                 </div>
+            </div>
+            <!-- Notificaciones -->
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <button
+                            class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+
+                            <img class="ico-menu" src="{{ asset('img/menu/notificacion.png') }}" />
+
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content">
+
+
+                        <p>No hay Notificaciones</p>
+
+
+                    </x-slot>
+                </x-dropdown>
             </div>
 
             <!-- Settings Dropdown -->
@@ -46,7 +63,7 @@
                             class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
 
                             @if (Auth::user()->image)
-                                <img src="{{ url('perfil/avatar/' . Auth::user()->image) }} " class="avatar">
+                                <img src="{{ url('perfil/avatar/' . Auth::user()->image) }} " class="ico-menu">
                             @elseif(Auth::user()->usuario)
                                 <div>{{ Auth::user()->usuario }}</div>
                             @else
@@ -58,10 +75,10 @@
 
                     <x-slot name="content">
                         <!-- Perfil -->
-                        <form method="GET" action="{{ route('perfil',['usuario' => Auth::user()->usuario]) }}">
+                        <form method="GET" action="{{ route('perfil', ['usuario' => Auth::user()->usuario]) }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('perfil',['usuario' => Auth::user()->usuario])">
+                            <x-dropdown-link :href="route('perfil', ['usuario' => Auth::user()->usuario])">
                                 {{ __('Perfil') }}
                             </x-dropdown-link>
                         </form>
@@ -106,6 +123,8 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+
+
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
