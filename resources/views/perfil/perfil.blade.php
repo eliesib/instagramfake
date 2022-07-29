@@ -32,7 +32,7 @@
                     </div>
                     <div class="h-auto">
                         <p class="font-bold">{{$user->name . ' ' . $user->surname }}</p>
-                        <p>Centro de diseño, desarrollo, comercialización y asistencia técnica de recursos educativos para la enseñanza y aprendizaje inclusivo.</p>
+                        <p>{{$user->description}}</p>
                     </div>
                 </div>
             </div>
